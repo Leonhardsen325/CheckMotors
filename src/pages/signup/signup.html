@@ -1,0 +1,47 @@
+
+<ion-header>
+
+  <ion-navbar transparent color="primary">
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+    <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{'background-image': 'url(' + background +')'}">
+    </ion-slide>
+</ion-slides>
+
+<ion-content>
+
+  <div class="login-container">
+      
+    <h1 text-center>
+      <ion-icon class="auth-icon" name="person-add"></ion-icon>
+    </h1>
+
+    <form [formGroup]="signupForm" (ngSubmit)="register(user); $event.preventDefault()">
+
+      <ion-item class="ion-item">
+        <ion-icon name="mail" item-left></ion-icon>
+        <ion-input type="text" placeholder="Email" formControlName="email" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-item">
+        <ion-icon name="lock" item-left></ion-icon>
+        <ion-input type="password" placeholder="Senha" clearInput clearOnEdit="false" formControlName="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-item">
+        <ion-icon name="lock" item-left></ion-icon>
+        <ion-input type="password" placeholder="Digite a senha novamente" clearInput clearOnEdit="false" formControlName="passwordTwo" [(ngModel)]="user.passwordTwo"></ion-input>
+      </ion-item>
+
+      <div>
+        <button ion-button block outline color="light" class="ion-button" type="submit" [disabled]="signupForm.invalid">Criar Conta</button>
+      </div>
+    </form>
+
+    
+  </div>
+</ion-content>

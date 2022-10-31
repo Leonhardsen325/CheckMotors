@@ -1,0 +1,40 @@
+
+  
+  <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+      <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{'background-image': 'url(' + background +')'}">
+      </ion-slide>
+  </ion-slides>
+  
+  <ion-content>
+
+    <div class="form-cadastro">
+
+      <ion-item class="ion-item">
+        <ion-label color="light">Marca</ion-label>
+        <ion-select [(ngModel)]="veiculo.marca" color="light">
+          <ion-option *ngFor="let marca of marcaList|async">{{ marca.nome }}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item class="ion-item" >
+        <ion-label color="light">Modelo</ion-label>
+        <ion-select [(ngModel)]="veiculo.modelo">
+            <ion-option *ngFor="let modelo of modeloList|async">{{modelo.nome}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item class="ion-item">
+          <ion-input  [(ngModel)]="veiculo.kmAtual" type="number" placeholder="Quilometragem atual"></ion-input>
+      </ion-item>
+     
+      <!--{{veiculo | json}}-->
+      
+      <button ion-button block outline color="light" class="ion-button" (click)="showConfirm()">Cadastrar</button>
+      
+      <button ion-button block outline color="light" class="ion-button" (click)="backHomePage()">Voltar</button>
+
+
+    </div>
+
+  </ion-content>

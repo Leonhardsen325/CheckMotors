@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar>
+   
+  </ion-navbar>
+
+</ion-header>
+
+<ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+  <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{'background-image': 'url(' + background +')'}">
+  </ion-slide>
+</ion-slides>
+
+<ion-content padding>
+    <form [formGroup]="resetPasswordForm" (submit)="resetPassword()" novalidate>
+
+        <ion-item>
+          <ion-label stacked>Email</ion-label>
+          <ion-input formControlName="email" type="email" placeholder="Your email address"
+            [class.invalid]="!resetPasswordForm.controls.email.valid && blur">
+          </ion-input>
+        </ion-item>
+    
+        <button ion-button block type="submit" [disabled]="!resetPasswordForm.valid">
+          Reset your Password
+        </button>
+    
+      </form>
+
+</ion-content>

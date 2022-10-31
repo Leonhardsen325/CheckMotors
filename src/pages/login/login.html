@@ -1,0 +1,37 @@
+<ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+    <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{'background-image': 'url(' + background +')'}">
+    </ion-slide>
+</ion-slides>
+
+<ion-content>
+
+    
+    <div class="login-container">
+      
+      
+      <img class="container-center" src="assets/img/logo.png"/>
+      
+      <ion-item class="ion-item">
+        <ion-input type="text" placeholder="Email" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-item">
+        <ion-input type="password" placeholder="Senha" clearInput clearOnEdit="false" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      
+      <button ion-button icon-left block outline  color="light" class="ion-button" (click)="login(user)" *ngIf="!auth.authenticated">Entrar</button>
+
+      <br><br>
+
+      <div class="strick">
+        <span>Ainda não possui conta? <button ion-button block outline color="light" class="ion-button" (click)="signup()">Cadastre-se</button></span>
+      </div>
+
+      <div >
+        <span><a class="strick" (click)="recuperarSenha()">Recuperação de senha</a></span>
+      </div>
+      
+    </div>
+     
+  
+</ion-content>

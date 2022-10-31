@@ -1,0 +1,80 @@
+page-login {
+    .scroll-content {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .ion-item {
+        border-radius: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 15px;
+        color: #fff;
+        background-color: rgba(255, 255, 255, .2);
+        font-size: 0.9em;
+    }
+
+    .logo {
+        width: 70%;
+        height: auto;
+        margin-bottom: 15vh;
+        padding-top: 9vh;
+    }
+
+    .slide-background {
+        border-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    ::-webkit-input-placeholder {
+        color: white !important;
+    }
+
+    .login-container {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        width: 100%;
+        margin: 0 auto;
+        padding: 10vw;
+        text-align: center;
+        color: white;
+    }
+
+    #titulo {
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .ion-button {
+        border-radius: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: rgba(255, 255, 255, .2);
+        font-size: 0.9em;
+        color: #fff;
+    }
+
+    .strick {
+        
+        margin-top: 15px;
+        margin-bottom: 15px;
+        
+        color: #fff;
+        
+        font-size: 0.9em;
+    }
+
+    .ion-button-google{
+        border-radius: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 0.9em;
+        color: #fff;
+    }
+    
+}

@@ -1,0 +1,45 @@
+<ion-header>
+
+    <ion-navbar transparent>
+      <ion-buttons>
+        <button ion-button (click)="logout()" *ngIf="auth.authenticated" class="button-color">Sair</button>
+      </ion-buttons>
+    </ion-navbar>
+  
+</ion-header>
+  
+<ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+  <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{'background-image': 'url(' + background +')'}">
+  </ion-slide>
+</ion-slides>
+
+<ion-content>
+    
+    <div class="home-container">
+
+        
+        <ion-grid >
+                <ion-row justify-content-center><h3>Painel de gerenciamento</h3></ion-row>
+
+                <ion-row >
+                  <ion-col>
+                        <button no-lines class="card" ion-item *ngFor="let veiculo of veiculosList|async" (click)="presentActionSheet(veiculo)">
+                                {{ veiculo.marca }} - {{ veiculo.modelo }}
+                        </button>
+                        <ion-item-options side="left">
+                            <button ion-button (click)="favorite(item)">Favorite</button>
+                            <button ion-button color="danger" (click)="share(item)">Share</button>
+                          </ion-item-options>
+                        
+
+                        
+                  </ion-col>
+                </ion-row>
+        </ion-grid>
+    </div>
+    
+    <ion-fab right bottom >
+        <button ion-fab color="primary" class="button-add" navPush="VeiculosPage"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+
+</ion-content>
